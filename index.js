@@ -2,14 +2,20 @@
 /**
  * Created by mario (https://github.com/hyprstack) on 01/10/2019.
  */
+const fs = require('fs');
+const util = require('util');
+const path = require('path');
 const Twitter = require('twitter');
 const {isNil} = require('lodash');
 const {
   consumer_key,
   consumer_secret,
   access_token_key,
-  access_token_secret
+  access_token_secret,
+  writeSystem
 } = require('./configs.js');
+
+const writeFile = util.promisify(fs.writeFile);
 
 async function getTweets(twitterClient, twitterHandler, numberOfTweets) {
   try {
@@ -53,8 +59,10 @@ async function run() {
     const numberOfTweets = process.argv[3] <= 100 ? process.argv[3] : 50;
 
     const tweets = await getTweets(twitterClient, twitterHandler, numberOfTweets);
-    console.log(tweets.length)
-    console.log(JSON.stringify(tweets, null, 2));
+
+    if (writeSystem === 'file') {
+      await writeFile(`${path.join(__dirname, 'tweetMentions.json')}`, Buffer.from(JSON.stringify(tweets, null, 2)));
+    }
   } catch (err) {
     console.log('err', err);
     process.exit(1);

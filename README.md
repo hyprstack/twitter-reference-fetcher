@@ -7,3 +7,16 @@ To get one please follow ["twitter api key"](https://blog.rapidapi.com/how-to-us
 You will need to register for a twitter developer account and then create an app.
 
 To run `node index.js <handle> <# of tweets>`
+
+The config file should contain the following:
+```javascript 1.8
+const configs = {
+  consumer_key: '',
+  consumer_secret: '',
+  access_token_key: '',
+  access_token_secret: '',
+  writeSystem: 'file'
+};
+
+module.exports = configs;
+```
