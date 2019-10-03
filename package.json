@@ -2,7 +2,7 @@
   "name": "twitter-reference-fetcher",
   "version": "1.0.0",
   "description": "Fetches up to the last 100 mentions in tweets for a given handler",
-  "main": "index.js",
+  "main": "lambda.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,9 @@
   "homepage": "https://github.com/hyprstack/twitter-reference-fetcher#readme",
   "license": "ISC",
   "dependencies": {
+    "aws-sdk": "^2.541.0",
     "lodash": "^4.17.15",
-    "twitter": "^1.7.1"
+    "twitter": "^1.7.1",
+    "uuidv4": "^5.0.1"
   }
 }
