@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "aws-sdk": "^2.541.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "twitter": "^1.7.1",
     "uuidv4": "^5.0.1"
   }
