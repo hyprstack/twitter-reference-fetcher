@@ -13,7 +13,7 @@
   "homepage": "https://github.com/hyprstack/twitter-reference-fetcher#readme",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.814.0",
+    "aws-sdk": "^2.1354.0",
     "lodash": "^4.17.21",
     "twitter": "^1.7.1",
     "uuidv4": "^5.0.1"
